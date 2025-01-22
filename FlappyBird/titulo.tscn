@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bccc0tt34jg3c"]
+
+[ext_resource type="Script" path="res://FlappyBird/titulo.gd" id="1_76e8r"]
+[ext_resource type="Texture2D" uid="uid://s2duji8pahup" path="res://FlappyBird/fondoFlappy.png" id="2_qhpg6"]
+
+[node name="Titulo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_76e8r")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.556863, 0.556863, 0.556863, 1)
+
+[node name="FondoFlappy" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 326)
+scale = Vector2(1.29778, 1.30952)
+texture = ExtResource("2_qhpg6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 128.0
+offset_top = 128.0
+offset_right = 1024.0
+offset_bottom = 256.0
+
+[node name="Empezar" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.117
+anchor_bottom = 0.035
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 748.912
+offset_bottom = 95.36
+theme_override_font_sizes/font_size = 52
+text = "Press 'space' to start"
+horizontal_alignment = 1
+vertical_alignment = 1

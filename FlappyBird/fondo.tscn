@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://n4tnomd5i2n5"]
+
+[ext_resource type="Script" path="res://FlappyBird/Fondo.gd" id="1_vgam2"]
+[ext_resource type="Script" path="res://FlappyBird/Fondo2.gd" id="2_d8oqq"]
+[ext_resource type="Texture2D" uid="uid://s2duji8pahup" path="res://FlappyBird/fondoFlappy.png" id="2_uff6g"]
+
+[node name="Fondo" type="ParallaxBackground"]
+script = ExtResource("1_vgam2")
+
+[node name="Atras" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(500, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Atras"]
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Atras"]
+offset_top = 1.0
+offset_right = 1422.0
+offset_bottom = 654.0
+texture = ExtResource("2_uff6g")
+expand_mode = 1
+
+[node name="Adelante" type="ParallaxLayer" parent="."]
+script = ExtResource("2_d8oqq")
+
+[node name="Timer" type="Timer" parent="Adelante"]
+autostart = true
+
+[connection signal="timeout" from="Adelante/Timer" to="Adelante" method="_on_timer_timeout"]
